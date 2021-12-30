@@ -34,4 +34,6 @@ jobs:
         with:
           dir: dist
           branch: gh-pages
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
 ```

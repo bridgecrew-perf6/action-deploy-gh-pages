@@ -1,12 +1,11 @@
 import * as core from "@actions/core";
+import { initialize } from "./git";
 
 const main = async (): Promise<void> => {
   core.info(`Start build process`);
 
   core.startGroup(`Initialize local repository`);
-  //core.debug(`Remote: ${url}`);
-  //core.debug(`Branch: ${branch}`);
-  //await util.init(url, branch);
+  await initialize();
   core.endGroup();
 };
 
