@@ -1,0 +1,20 @@
+{
+  "name": "@faablecloud/action-deploy-gh-pages",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:faablecloud/action-deploy-gh-pages.git",
+  "author": "Marc Pomar <marc@faable.school>, Marcos Íñigo <marcos@corecode.school>",
+  "license": "MIT",
+  "scripts": {
+    "build": "ncc build src/main.ts -o dist",
+    "dev": "ts-node src/main.ts"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@vercel/ncc": "^0.33.1",
+    "ts-node": "^10.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
