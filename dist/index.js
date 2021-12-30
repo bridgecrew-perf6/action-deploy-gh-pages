@@ -9586,7 +9586,7 @@ const git = (cmd) => __awaiter(void 0, void 0, void 0, function* () {
 });
 const initialize = () => __awaiter(void 0, void 0, void 0, function* () {
     const token = core.getInput("token");
-    const url = `https://${token}@github.com/${github.context.repo}.git`;
+    const url = `https://${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
     const branch = "gh-pages";
     core.info(`repo ${url}`);
     yield io.mkdirP(cwd);
