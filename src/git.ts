@@ -14,6 +14,7 @@ const git = async (cmd: string): Promise<number> => {
 };
 
 export const initialize = async (): Promise<void> => {
+  const directory = core.getInput("dir") || "dist";
   const token = core.getInput("token");
   const url = `https://${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
   const branch = "gh-pages";
@@ -30,7 +31,7 @@ export const initialize = async (): Promise<void> => {
     await git(`checkout --orphan ${branch}`);
   }
 
-  //io.cp(`${src}/.`, `${cwd}/.`, { recursive: true });
+  io.cp(`${directory}/.`, `${cwd}/.`, { recursive: true });
 
   await git(`add --all`);
   await git(`config user.name "faable.com"`);
