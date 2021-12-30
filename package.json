@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.6.0",
+    "@actions/io": "^1.1.1",
     "@vercel/ncc": "^0.33.1",
     "ts-node": "^10.4.0"
   },

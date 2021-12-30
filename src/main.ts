@@ -1,4 +1,4 @@
-import core from "@actions/core";
+import * as core from "@actions/core";
 
 const main = async () => {
   core.info(`Start build process`);
@@ -10,4 +10,6 @@ const main = async () => {
   core.endGroup();
 };
 
-main();
+main().catch((e) => {
+  core.setFailed(e.message);
+});
