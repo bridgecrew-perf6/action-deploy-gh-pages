@@ -30,7 +30,7 @@ jobs:
         run: yarn run build
 
       - name: Deploy to GitHub Pages
-        uses: faablecloud/action-deploy-gh-pages@main
+        uses: faablecloud/action-deploy-gh-pages@v1
         with:
           dir: dist
           branch: gh-pages
