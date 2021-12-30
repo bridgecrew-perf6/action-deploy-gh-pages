@@ -16,6 +16,7 @@ const git = async (cmd: string): Promise<number> => {
 export const initialize = async () => {
   const token = core.getInput("token");
   const url = `https://${token}@github.com/${github.context.repo}.git`;
+  const branch = "gh-pages";
   core.info(`repo ${url}`);
 
   await io.mkdirP(cwd);
@@ -23,6 +24,11 @@ export const initialize = async () => {
   await git("init");
   await git(`remote add origin "${url}"`);
   await git(`fetch --prune`);
+  try {
+    await git(`checkout -b ${branch} origin/${branch}`);
+  } catch (error) {
+    await git(`checkout --orphan ${branch}`);
+  }
 
   //io.cp(`${src}/.`, `${cwd}/.`, { recursive: true });
 
