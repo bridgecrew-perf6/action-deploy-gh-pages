@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 
-const main = async () => {
+const main = async (): Promise<void> => {
   core.info(`Start build process`);
 
   core.startGroup(`Initialize local repository`);
