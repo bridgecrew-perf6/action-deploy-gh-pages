@@ -9585,6 +9585,7 @@ const git = (cmd) => __awaiter(void 0, void 0, void 0, function* () {
     return yield (0, exec_1.exec)(`git ${cmd}`, [], { cwd });
 });
 const initialize = () => __awaiter(void 0, void 0, void 0, function* () {
+    const directory = core.getInput("dir") || "dist";
     const token = core.getInput("token");
     const url = `https://${token}@github.com/${github.context.repo.owner}/${github.context.repo.repo}.git`;
     const branch = "gh-pages";
@@ -9599,7 +9600,7 @@ const initialize = () => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         yield git(`checkout --orphan ${branch}`);
     }
-    //io.cp(`${src}/.`, `${cwd}/.`, { recursive: true });
+    io.cp(`${directory}/.`, `${cwd}/.`, { recursive: true });
     yield git(`add --all`);
     yield git(`config user.name "faable.com"`);
     yield git(`config user.email "noreply@faable.com"`);
