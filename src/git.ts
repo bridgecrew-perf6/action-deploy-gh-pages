@@ -13,7 +13,7 @@ const git = async (cmd: string): Promise<number> => {
   return await exec(`git ${cmd}`, [], { cwd });
 };
 
-export const initialize = async () => {
+export const initialize = async (): Promise<void> => {
   const token = core.getInput("token");
   const url = `https://${token}@github.com/${github.context.repo}.git`;
   const branch = "gh-pages";
