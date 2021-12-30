@@ -1,6 +1,6 @@
 {
   "name": "@faablecloud/action-deploy-gh-pages",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "dist/index.js",
   "repository": "git@github.com:faablecloud/action-deploy-gh-pages.git",
   "author": "Marc Pomar <marc@faable.school>, Marcos Íñigo <marcos@corecode.school>",
